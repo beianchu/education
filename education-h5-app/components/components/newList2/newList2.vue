@@ -1,8 +1,8 @@
 <template>
 	<view>
-		<scroll-view class="scroll-view_H" scroll-x="true">
-			<view id="demo1" class="scroll-view-item_H uni-bg-red">
-				<view class="box" v-for="item in data" :key="item.id">
+		<!-- <scroll-view class="scroll-view_H"> -->
+			<view id="demo1" class="scroll-view-item_H uni-bg-red" style="display: flex;width: auto;">
+				<view class="box"  v-for="item in list" :key="item.id">
 					<view class="img">
 						<img :src="item.mainImage.slice(-3)=='jpg'?`../../../static/${item.mainImage}` :item.mainImage">
 					</view>
@@ -14,9 +14,9 @@
 					</view>
 				</view>
 			</view>
-
-			<view id="demo2" class="scroll-view-item_H uni-bg-green">B</view>
-		</scroll-view>
+			<!-- <img src="../../../static/static/images/banner1.jpg" alt=""> -->
+			<!-- <view id="demo2" class="scroll-view-item_H uni-bg-green">B</view> -->
+		<!-- </scroll-view> -->
 	</view>
 </template>
 
@@ -29,7 +29,6 @@
 		toRefs
 	} from 'vue';
 	export default {
-		props:['data'],
 		setup() {
 			const data = reactive({
 				list: []
@@ -47,14 +46,12 @@
 
 <style lang="scss">
 	.box {
-		width: 100%;
+		width: 90%;
 		margin: 10rpx auto;
 		display: flex;
-	
-
 
 		.img {
-			width: 50%;
+			width: 100%;
 			margin-right: 10rpx;
 
 			img {
@@ -66,6 +63,7 @@
 
 		.left {
 			width: 50%;
+			font-size: 15rpx;
 
 			// overflow: hidden;
 			// text-overflow: ellipsis;
@@ -107,8 +105,9 @@
 	}
 
 	.scroll-view-item_H {
-		// display: flex;
+		display: flex;
 		// flex-wrap: wrap;
+		width: 1100%;
 		// display: inline-block;
 		// width: 100%;
 		font-size: 36rpx;

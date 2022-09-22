@@ -3,7 +3,8 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": ""
+				"navigationBarTitleText": "",
+					"enablePullDownRefresh": true
 			}
 		},
 		{
@@ -15,7 +16,8 @@
 			"path": "pages/read/read",
 			"style": {
 				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false
+				
+				"enablePullDownRefresh": true
 			}
 
 		}, {
@@ -52,6 +54,53 @@
         
         ,{
             "path" : "components/components/newList2/newList2",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/indexlits/indexlits",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "components/components/money/money",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        
+        ,{
+            "path" : "components/components/txtLIst/txtLIst",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "components/components/backTo/backTo",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+       
+        ,{
+            "path" : "pages/shoplList/shoplList",
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "",

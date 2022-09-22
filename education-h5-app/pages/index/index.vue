@@ -1,107 +1,130 @@
 <template>
 	<div>
-	<myinput :clock="clock"></myinput>
-	<swiper class="swiper" @change="img" circular indicator-dots="true" autoplay="true" interval="2000" duration="500"
-		indicator-color="rgba(225,225,225,.5)" indicator-active-color="#fff">
-		<swiper-item v-for="item,index in src" :key="index" :style="`background:${item.bgc}`">
-			<view class="swiper-item uni-bg-red">
-				<image :src="item.img"></image>
-			</view>
-		</swiper-item>
-	</swiper>
-	<view class="classification">
-		<ul>
-			<li v-for="item,index in fication.slice(0,7)" >{{item.name}}</li>
-			<li>全部分类</li>
-		</ul>
-	</view>
-	<!-- 热门推荐视频列表 -->
-	<div class="box-txt">
-		<div class="txt-red">
-			热门推荐 <span class="htitle">HoT</span>
+		<myinput :clock="clock"></myinput>
+		<swiper class="swiper" @change="img" circular indicator-dots="true" autoplay="true" interval="2000"
+			duration="500" indicator-color="rgba(225,225,225,.5)" indicator-active-color="#fff">
+			<swiper-item v-for="item,index in src" :key="index" :style="`background:${item.bgc}`">
+				<view class="swiper-item uni-bg-red">
+					<image :src="`http://m.mengxuegu.com/${item.imageUrl}`" @click="bannerTO"></image>
+				</view>
+			</swiper-item>
+		</swiper>
+		<view class="classification">
+			<ul>
+				<li v-for="item,index in fication.slice(0,7)">{{item.name}}</li>
+				<li>全部分类</li>
+			</ul>
+		</view>
+		<!-- 热门推荐视频列表 -->
+		<div class="box-txt">
+			<div class="txt-red">
+				热门推荐 <span class="htitle">HoT</span>
+			</div>
+			<div class="allbox">全部></div>
 		</div>
-		<div class="allbox">全部></div>
-	</div>
-	<scroll-view scroll-x="true" class="scrollbox">
-		<view class="box-imgs">
-			<HotList></HotList>
-			<!-- <HotList></HotList> -->
-		</view> 	
-	</scroll-view>
-	<!-- 近期上新 -->
-	<div class="box-txt">
-		<div class="txt-red">
-		近期上新 <span class="htitle">NEW</span>
-		</div>
-		<div class="allbox">全部></div>
-	</div>
-	<scroll-view scroll-x="true" class="scrollbox">
-		<view class="scirool">
-			<!-- <HotList></HotList> -->
-			<!-- <newlist></newlist> -->
-			<!-- <HotList></HotList> -->
-			<HotList></HotList>
-		</view> 	
-	</scroll-view>
-	<!-- 免费精选 -->
-	<div class="box-txt">
-		<div class="txt-red">
-		免费精选 <span class="htitle">NEW</span>
-		</div>
-		<div class="allbox">全部></div>
-	</div>
-	<scroll-view scroll-x="true" class="scrollbox">
-		<view class="scirool">
-			<!-- <HotList></HotList> -->
-			<!-- <newlist></newlist> -->
-			<!-- <HotList></HotList> -->
-			<HotList></HotList>
-		</view> 	
-	</scroll-view>
-	<!-- 付费精选 -->
 
-	<div class="box-txt">
-		<div class="txt-red">
-		付费精选 <span class="htitle">NEW</span>
+		<scroll-view class="scroll-view_H" scroll-x="true" @scroll="scroll" scroll-left="120">
+			<view id="demo1" class="scroll-view-item_H uni-bg-red">
+				<HotList></HotList>
+			</view>
+			<view id="demo2" class="scroll-view-item_H uni-bg-green">
+				<HotList></HotList>
+			</view>
+		</scroll-view>
+
+		<!-- 近期上新 -->
+		<div class="box-txt">
+			<div class="txt-red">
+				近期上新 <span class="htitle">NEW</span>
+			</div>
+			<div class="allbox">全部></div>
 		</div>
-		<div class="allbox">全部></div>
-	</div>
-	<scroll-view scroll-x="true" class="scrollbox">
-		<view class="scirool">
-			<!-- <HotList></HotList> -->
-			<!-- <newlist></newlist> -->
-			<!-- <HotList></HotList> -->
-			<newlsit :data="arr"></newlsit>
-		</view> 	
-	</scroll-view>
-	<div class="backbox"  @click="backToTop22"></div>
+		<scroll-view class="scroll-view_H" scroll-x="true" @scroll="scroll" scroll-left="120">
+			<view id="demo1" class="scroll-view-item_H uni-bg-red">
+				<newlsit></newlsit>
+			</view>
+			<!-- <view id="demo2" class="scroll-view-item_H uni-bg-green">B</view>
+							<vie -->
+		</scroll-view>
+		<!-- <scroll-view scroll-x="true" class="scrollbox">
+			<view class="scirool">
+
+				<HotList></HotList>
+			</view>
+		</scroll-view> -->
+		<!-- 免费精选 -->
+		<div class="box-txt">
+			<div class="txt-red">
+				免费精选 <span class="htitle">NEW</span>
+			</div>
+			<div class="allbox">全部></div>
+		</div>
+		<scroll-view class="scroll-view_H" scroll-x="true" @scroll="scroll" scroll-left="120">
+			<view id="demo1" class="scroll-view-item_H uni-bg-red">
+				<HotList></HotList>
+			</view>
+			<!-- <view id="demo2" class="scroll-view-item_H uni-bg-green">
+				<HotList></HotList>
+			</view> -->
+
+		</scroll-view>
+
+		<!-- 付费精选 -->
+
+		<div class="box-txt">
+			<div class="txt-red">
+				付费精选 <span class="htitle">NEW</span>
+			</div>
+			<div class="allbox">全部></div>
+		</div>
+		<scroll-view scroll-x="true" class="scrollbox">
+			<view class="scirool">
+
+				<money :data="arr"></money>
+			</view>
+		</scroll-view>
+		<view class="backbox" v-if="flag" @tap="backGo"><span class="iconfont">&#xed53;</span></view>
+		<view class="box-btom" v-if="moer">
+			我是有底线的，没有更多了
+		</view>
 	</div>
 </template>
 
 <script>
+	import money from "../../components/components/money/money.vue"
 	import newlsit from "../../components/components/newList2/newList2.vue"
 	// 列表组件
 	import HotList from '../../components/components/HotList/HotList.vue'
 	// 头部组件
 	import myinput from '@/components/components/head-search/head-search.vue'
-	import {list} from "../../api/api.js"
 	import {
-		swiper
+		list
+	} from "../../api/api.js"
+	import {
+		swiper,
+		bannerimg
 	} from '../../api/api.js';
 	import {
 		reactive,
 		toRefs
 	} from 'vue'
+	// import {on} from "@uni"
 	export default {
 		components: {
 			myinput,
 			HotList,
-			newlsit
-			
+			newlsit,
+			money
+
+		},
+		onReachBottom() {
+			console.log('哈哈哈哈哈');
 		},
 		setup() {
 			const data = reactive({
-				arr:[],
+				arr: [],
+				flag: false,
+				moer: false,
 				src: [{
 						img: '../../static/static/images/banner1.jpg',
 						bgc: 'linear-gradient(to top, #fff 0%, #3a2e5e 100%)'
@@ -118,10 +141,20 @@
 				clock: '#3a2e5e', //背景颜色
 				fication: [], // 分类数据
 			})
+			// 轮播图数据列表
 			swiper().then(res => {
-				console.log(res.data);
+				// console.log(res.data);
 				data.fication = res.data
 			})
+			// 轮播图接口
+			bannerimg().then(res => {
+				data.src = res.data
+				// console.log(res, '轮播图数据');
+			})
+			// 点击轮播图
+			const bannerTO = () => {
+				console.log('bannerTO');
+			}
 			const img = (e) => {
 				// console.log(e.detail.current);
 				if (e.detail.current == 0) {
@@ -133,96 +166,187 @@
 				}
 			}
 			// 点击干返回顶部
-			const backToTop22=()=>{
+			const backGo = () => {
 				console.log(11);
-				 let a = document.documentElement.scrollTop;
-				      console.log(a);
-				      let timer = setInterval(() => {
-				        if (a > 0) {
-				          a -= 100;
-				          window.scrollTo(0, a);
-				        } else {
-				          clearInterval(timer);
-				        }
-				      }, 10);
+				let a = document.documentElement.scrollTop;
+				console.log(a);
+				let timer = setInterval(() => {
+					if (a > 0) {
+						a -= 100;
+						window.scrollTo(0, a);
+					} else {
+						clearInterval(timer);
+					}
+				}, 10);
 			}
 			window.onscroll = function() {
-				
-				    let clientHeight  = document.documentElement.clientHeight; //浏览器高度
-				    let scrollHeight = document.body.scrollHeight;
-				    let scrollTop = document.documentElement.scrollTop;
-				 
-				    let distance = 50;  //距离视窗还用50的时候，开始触发；
-				if(scrollTop + clientHeight >= scrollHeight){
-					console.log(111);
-					list().then(res=>{
-						data.arr=[...data.arr,...res.data.records]
-						console.log(res,'下拉数据');
-					})
+
+				let clientHeight = document.documentElement.clientHeight; //浏览器高度
+				let scrollHeight = document.body.scrollHeight;
+				let scrollTop = document.documentElement.scrollTop;
+				// 判断当大于1000时显示返回顶部 v-if判断
+				if (scrollTop >= 650) {
+					data.flag = true
+				} else {
+					data.flag = false
 				}
-				    // if ((scrollTop + clientHeight) &gt;= (scrollHeight - distance)) {
-				    //     console.log("到底了，开始加载数据");
-				    // }
-			  //为了保证兼容性，这里取两个值，哪个有值取哪一个
-			  //scrollTop就是触发滚轮事件时滚轮的高度
-			  // var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-			  // console.log("滚动距离" + scrollTop,window.outerHeight);
-			  // // if (scrollTop + clientHeight >= scrollHeight)
-			  // if(window.outerHeight-scrollTop==80){
-				 //  console.log(哈哈哈哈11111111111111111111111111);
-			  // }
+				let distance = 50;
+				//距离视窗还用50的时候，开始触发；
+				// 
+				if (data.arr.lenght < 60) {
+
+				} else {
+					data.moer = true
+				}
+				if (scrollTop + clientHeight >= scrollHeight) {
+					// console.log(111);
+
+					list().then(res => {
+						if (data.arr.length < 60) {
+							data.arr = [...data.arr, ...res.data.records]
+						}
+
+						// console.log(res,'下拉数据');
+					})
+
+
+				}
+				// 判断v-if 数组的长度 当到达一定的条数的时候停止加载在数据
+
 			}
-			
+
 			return {
+				backGo,
 				...toRefs(data),
+				bannerTO,
 				img
 			}
+
+
+		},
+		onReachBottom() {
+			console.log(this.flag);
 		}
 
 	}
 </script>
 
 <style lang="scss">
-	.backbox{
-	width: 200rpx;
-	height: 200rpx;
-	border-radius: 50%;
-	background-color: red;
-	position: fixed;
-	top: 1200rpx;
-	right: 10rpx;
-	
+	.scroll-Y {
+		height: atuo;
 	}
-	.scirool{
+
+	.scroll-view_H {
+		white-space: nowrap;
+		width: 100%;
+	}
+
+	.scroll-view-item {
+		height: atuo;
+		// line-height: 300rpx;
+		text-align: center;
+		font-size: 36rpx;
+	}
+
+	.scroll-view-item_H {
+		display: inline-block;
+		width: 90%;
+		height: atuo;
+		// line-height: 300rpx;
+		text-align: center;
+		font-size: 36rpx;
+	}
+
+	.box-btom {
+		height: atuo;
+		// line-height: 100rpx;
+		width: 100%;
+		text-align: center;
+		color: gray;
+	}
+
+	@font-face {
+		font-family: 'iconfont';
+		src: url('iconfont.woff2?t=1663728065336') format('woff2'),
+			url('iconfont.woff?t=1663728065336') format('woff'),
+			url('iconfont.ttf?t=1663728065336') format('truetype');
+	}
+
+	.iconfont {
+		font-family: "iconfont" !important;
+		font-size: 16px;
+		font-style: normal;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+	/* CDN 服务仅供平台体验和调试使用，平台不承诺服务的稳定性，企业客户需下载字体包自行发布使用并做好备份。 */
+	@font-face {
+		font-family: 'iconfont';
+		/* Project id 3656445 */
+		src: url('//at.alicdn.com/t/c/font_3656445_tn79ffnjdc7.woff2?t=1663728107339') format('woff2'),
+			url('//at.alicdn.com/t/c/font_3656445_tn79ffnjdc7.woff?t=1663728107339') format('woff'),
+			url('//at.alicdn.com/t/c/font_3656445_tn79ffnjdc7.ttf?t=1663728107339') format('truetype');
+	}
+
+	.backbox {
+		width: 100rpx;
+		height: 100rpx;
+		border-radius: 50%;
+		background-color: rgb(0, 0, 0, 0.5);
+		position: fixed;
+		top: 800rpx;
+		right: 10rpx;
+		text-align: center;
+		line-height: 100rpx;
+		font-size: 20rpx;
+		color: white;
+
+	}
+
+	.scirool {
 		overflow-x: scroll;
 	}
-	.scrollbox{
+
+	.scrollbox {
+		// overflow-x: scroll;
+		// width: 100%;
 		display: flex;
+		justify-content: space-between;
+		// width: 200%;
+		// .boxlist{
+		// 	width: 70%;
+		// }
 	}
-	.box-imgs{
-		width: 100%;
+
+	.box-imgs {
+		// width: 100%;
 		display: flex;
-	overflow-x: scroll;
+		// overflow-x: scroll;
 		justify-content: space-around;
 	}
-	.box-txt{
+
+	.box-txt {
 		padding: 20rpx;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		.txt-red{
-			.htitle{
-				background-image: linear-gradient(to right,$mxg-color-orange,$mxg-text-color-red);
+
+		.txt-red {
+			.htitle {
+				background-image: linear-gradient(to right, $mxg-color-orange, $mxg-text-color-red);
 				font-size: 20rpx;
 				color: #fff;
 				padding: 10rpx;
 				border-radius: 30rpx 30rpx 30rpx 0;
 			}
 		}
-		.allbox{
+
+		.allbox {
 			color: gray;
 		}
 	}
+
 	* {
 		margin: 0;
 		padding: 0;

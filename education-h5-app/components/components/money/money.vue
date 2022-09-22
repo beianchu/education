@@ -2,7 +2,7 @@
 	<view>
 		<scroll-view class="scroll-view_H">
 			<view id="demo1" class="scroll-view-item_H uni-bg-red">
-				<view class="box" v-for="item in list.slice(0,5)" :key="item.id" @click="TOpage(item.id)">
+				<view class="box" v-for="item in data" :key="item.id">
 					<view class="img">
 						<img :src="item.mainImage.slice(-3)=='jpg'?`../../../static/${item.mainImage}` :item.mainImage">
 					</view>
@@ -29,6 +29,7 @@
 		toRefs
 	} from 'vue';
 	export default {
+		props:['data'],
 		setup() {
 			const data = reactive({
 				list: []
@@ -37,14 +38,7 @@
 				console.log(res.data.records);
 				data.list = res.data.records
 			})
-			// 点击跳转详情页面
-			const TOpage=(id)=>{
-				uni.navigateTo({
-					url:`/pages/shoplList/shoplList?id=${id}`
-				})
-			}
 			return {
-				TOpage,
 				...toRefs(data)
 			}
 		}
