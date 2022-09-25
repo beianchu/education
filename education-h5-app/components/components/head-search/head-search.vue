@@ -1,6 +1,6 @@
 <template>
 	<view class="view" :style="`background-color: ${clock}`">
-		<view class="input">
+		<view class="input" @click="toSearch">
 			<img src="../../../static//放大镜.png">
 			搜索你想要的内容
 		</view>
@@ -17,7 +17,17 @@
 		setup(props, tcx) {
 			const data = reactive({})
 			console.log(props);
+			// 点击跳转到搜索页面
+		const toSearch=()=>{
+			uni.navigateTo({
+				url: '/pages/Tosearch/Tosearch',
+				success: res => {},
+				fail: () => {},
+				complete: () => {}
+			});
+		}
 			return {
+				toSearch,
 				...toRefs(data)
 			}
 		}

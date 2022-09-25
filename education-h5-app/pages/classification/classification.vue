@@ -16,6 +16,7 @@
 			<div class="contenlist">
 				<div class="boxyuan" v-for="item in arrList.labelList" :key="index">{{item.name}}</div>
 			</div>
+		
 		</div>
 	</view>
 </template>
@@ -33,7 +34,7 @@
 			const data = reactive({
 				arr: [],
 				chidlId:1,
-				arrList:[]
+				arrList:{}
 			})
 		
 			// 点击tabr切换
@@ -43,7 +44,16 @@
 					data.arrList=data.arr.find(item=>item.id==id)
 			}
 			// 获取数据tabr
+			swiper().then(res => {
+				console.log(res);
+				data.arr=res.data
+			setTimeout(()=>{
+					data.arrList=res.data[0].labelList
+			},0)
+				console.log();
+				console.log(res.data[0].labelList);
 			
+			})
 			
 			return {
 			
@@ -52,18 +62,14 @@
 			}
 		},
 		onLoad() {
-			swiper().then(res => {
-				console.log(res);
-				this.arr=res.data
 			
-			})
+		},
+		
+		onshow(){
+			
 			// uni.showLoading({
 			// 	title:"哈哈哈"
-			// })
-			setTimeout(()=>{this.arrList=data.arr.find(item=>item.id==this.chidlId)},0)
-		},
-		onLaunch() {
-			
+			this.arrList=this.arr.find(item=>item.id==this.chidlId)
 		}
 	}
 </script>

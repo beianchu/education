@@ -2,7 +2,7 @@
 	<view>
 		<scroll-view class="scroll-view_H" scroll-x="true" >
 			<view id="demo1" class="scroll-view-item_H uni-bg-red">
-				<view class="box" v-for="item in list.slice(0,5)" :key="item.id">
+				<view class="box" v-for="item in list.slice(0,5)" :key="item.id" @click="tOindex">
 					<view class="img">
 						<img :src="item.mainImage.slice(-3)=='jpg'?`../../../static/${item.mainImage}` :item.mainImage">
 					</view>
@@ -37,6 +37,15 @@
 				console.log(res.data.records);
 				data.list = res.data.records
 			})
+			//点击跳转到详情页面
+			const tOindex=()=>{
+			uni.navigateTo({
+				url: `/pages/shoplList/shoplList?id=${id}`,
+				success: res => {},
+				fail: () => {},
+				complete: () => {}
+			});
+			}
 			return {
 				...toRefs(data)
 			}

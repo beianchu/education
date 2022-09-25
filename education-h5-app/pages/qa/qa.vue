@@ -11,7 +11,7 @@
 		</ul>
 		<!-- </div> -->
 		<ul class="conetn-box" style="margin-top: 10rpx;">
-			<li v-for="(item, index) in arrtxt" :key="index">
+			<li v-for="(item, index) in arrtxt" :key="index" @click="Toindex">
 				<div class="box-tite">
 					<h4>{{ item.title }}</h4>
 					<!-- <p style="color: gray;">{{item.summary}}</p> -->
@@ -55,7 +55,15 @@ export default {
 			console.log(res, 'askList问答');
 			data.arrtxt = res.data.records;
 		});
-		//
+		//点击跳转到问答读详情
+		const Toindex=()=>{
+			uni.navigateTo({
+				url: '/pages/askindexLIst/askindexLIst',
+				success: res => {},
+				fail: () => {},
+				complete: () => {}
+			});
+		};
 		// 点击干返回顶部
 		const backGo = () => {
 			console.log(11);
@@ -117,6 +125,7 @@ export default {
 			// 判断v-if 数组的长度 当到达一定的条数的时候停止加载在数据
 		};
 		return {
+			Toindex,
 			backGo,
 			TOId,
 			...toRefs(data)

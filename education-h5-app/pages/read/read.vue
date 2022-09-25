@@ -12,7 +12,7 @@
 			</ul>
 		<!-- </div> -->
 		<ul class="conetn-box" style="margin-top: 10rpx;">
-			<li v-for="item,index in arrtxt" :key="index">
+			<li v-for="item,index in arrtxt" :key="index" @click="indexList">
 				<div class="box-tite">
 					<h4>{{item.title}}</h4>
 					<p style="color: gray;">{{item.summary}}</p>
@@ -56,6 +56,12 @@
 				tabDI: 1
 
 			})
+			// 点击跳阅读数据
+			const indexList=()=>{
+				uni.navigateTo({
+					url:'/pages/readLIst/readLIst'
+				})
+			}
 			// 点击干返回顶部
 			const backGo = () => {
 				console.log(11);
@@ -127,6 +133,7 @@
 
 			}
 			return {
+				indexList,
 				backGo,
 				TOId,
 				...toRefs(data)

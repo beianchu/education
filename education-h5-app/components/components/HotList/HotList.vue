@@ -15,7 +15,7 @@
 				</view>
 			</view>
 			<!-- <img src="../../../static/static/images/banner1.jpg" alt=""> -->
-			<view id="demo2" class="scroll-view-item_H uni-bg-green">B</view>
+		
 		</scroll-view>
 	</view>
 </template>
