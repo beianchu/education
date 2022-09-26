@@ -1,7 +1,7 @@
 <template>
 	<view class="box">
 		<div class="top">
-			<p class="pp" @click="$router.push('/pages/mineView/mineView')">&lt;</p>
+			<p class="pp" @click="$router.push('/pages/my/my')">&lt;</p>
 			<h4>我的余额</h4>
 			<p></p>
 		</div>

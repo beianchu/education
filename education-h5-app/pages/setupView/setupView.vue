@@ -1,7 +1,7 @@
 <template>
 	<view class="body">
 		<view class="header">
-			<text class="iconfont icon" @click="goreturn">&lt;</text>
+			<text class="iconfont icon" @click="$router.push('/pages/my/my')">&lt;</text>
 			<text class="txt">设置</text>
 		</view>
 		<view class="uni-list">
@@ -18,16 +18,16 @@
 				<switch checked @change="switch1Change" />
 			</view>
 		</view>
-		<view class="uni-list-cache"  @click="openPop">
-			<view class="uni-list-cell-db">清除应用缓存</view>
+		<view class="uni-list-cache" >
+			<view class="uni-list-cell-db"  @click="openPop">清除应用缓存</view>
 			<text class="cache-txt">1kB</text>
 		</view>
 		<view>
 			
 			
 			<!-- <button @click="openPop">打开弹窗</button> -->
-			<uni-popup ref="popup" type="center">
-				<view class="pop-box">
+			<uni-popup ref="popup" type="center" >
+				<view class="pop-box" v-if="flag">
 					<view class="eliminate">
 						您确定清除应用缓存吗？
 					</view>
@@ -38,7 +38,7 @@
 						<view class="no" @click="closePop">
 							取消
 						</view>
-						<view class="yes">
+						<view class="yes" @click="quding">
 							确定
 						</view>
 					</view>
@@ -58,15 +58,26 @@
 		setup(props, context) {
 			const popup = ref(null)
 			const data = reactive({
+				flag:false
 
 			});
 			/* 打开弹框 */
 			const openPop = () => {
-				popup.value.open()
+				// popup.value.open()
+				data.flag=true
+				console.log(1);
 			}
 			/* 关闭弹窗 */
 			const closePop = () => {
+				data.flag=false
 				popup.value.close()
+			}
+			// 点击确定关闭
+			const quding=()=>{
+				data.flag=false
+				uni.showToast({
+					title:"清除成功！"
+				})
 			}
 			/* 按钮开关 */
 			const switch1Change = (e) => {
@@ -85,7 +96,8 @@
 				switch1Change,
 				popup,
 				openPop,
-				closePop
+				closePop,
+				quding
 			}
 		}
 	}
@@ -148,6 +160,9 @@
 		text-align: center;
 		overflow: hidden;
 		border-radius: 5px;
+		// margin: 0 atuo;
+		top: 0;
+	left: 150rpx;
 
 		.eliminate {
 			font-weight: 400;

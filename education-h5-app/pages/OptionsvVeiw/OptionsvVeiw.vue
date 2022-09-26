@@ -1,7 +1,7 @@
 <template>
 	<view class="boxs">
 		<view class="header">
-			<text class="iconfont icon"  @click="$router.push('/pages/mineView/mineView')">&lt;</text>
+			<text class="iconfont icon" @click="$router.push('/pages/my/my')">&lt;</text>
 			<text class="txt">关于我们</text>
 		</view>
 		<view class="aside">

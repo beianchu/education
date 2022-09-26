@@ -3,8 +3,8 @@
 	<view class="header" @click="dengl">
 		<view class="header-img"></view>
 		<view class="right">
-		
-			<span v-if="flag==false">请登录</span>
+		<image src="../../static/logo.png" mode="" style="width: 100rpx;height: 100rpx;"></image>
+			<span v-if="flag==false" @click="$router.push('/pages/logins/logins')">请登录</span>
 			<view v-else class="yongh" @click="ziliao">
 				<p>万强</p>
 				<p>用户名：Deborah Martinez</p>
@@ -57,11 +57,13 @@
 </template>
 
 <script>
-import { ref, reactive, toRefs } from 'vue';
+import { ref, reactive, toRefs,  } from 'vue';
+import {useRoute} from "vue-router"
 export default {
 	setup() {
 		const data = reactive({});
-         
+         const route=useRoute()
+		 console.log(route,'路由跳转的数据');
 		const dengl = () => {
 			if (localStorage.getItem('token')) {
 				// 详情页面
@@ -71,7 +73,7 @@ export default {
 			}else{
 				// 登录页面
 				uni.navigateTo({
-					url: '/pages/dengl/dengl'
+					url: '/pages/Logins/Logins'
 				});
 			}
 			
@@ -154,6 +156,7 @@ export default {
 			ziliao,
 			shezhi
 		};
+	
 	},
 
 	data() {
@@ -164,7 +167,7 @@ export default {
 	},
 	onLoad() {
 		// 如果有token值
-		if (localStorage.getItem('token')) {
+		if (localStorage.getItem('userToken')) {
 			console.log(123);
 			this.flag = true;
 		} else {

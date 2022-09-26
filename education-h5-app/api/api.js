@@ -87,56 +87,141 @@ const serchlistsTile = async () => {
 }
 // ask问答·详情数据接口
 const asklistIndex = async () => {
-			let data = await api({
-				url: "question/api/question/20"
-			})
-			return data
-			}
+	let data = await api({
+		url: "question/api/question/20"
+	})
+	return data
+}
 
-			// 我的订单接口
-			const order = async () => {
-				let data = await api({
-					url: "pay/order/user/list"
-				})
-				return data
-			}
-			// 我的余额
-			const balance = async () => {
-				let data = await api({
-					url: "pay/user/balance"
-				})
-				return data
-			}
-			// 我的学习 course/course/study/list
-			const study = async () => {
-				let data = await api({
-					url: "course/course/study/list"
-				})
-				return data
-			}
-			// balance
-			// export const floor = async () => { //楼层   这是一种导出方式
-			// 	let data = await api({
-			// 		url: 'home/floordata'
-			// 	})
-			// 	return data
-			// }
-			export {
-				//这是另一种导出方式
-				taocanlsit,
-				swiper,
-				list,
-				asklist,
-				bannerimg,
-				readlist,
-				txttabList,
-				indexList,
-				pinglunlist,
-				txttoLisT,
-				redlist4,
-				serchlistsTile,
-				asklistIndex,
-				order,
-				balance,
-				study
-			}
+// 我的订单接口
+const order = async () => {
+	let data = await api({
+		url: "pay/order/user/list"
+	})
+	return data
+}
+// 我的余额
+const balance = async () => {
+	let data = await api({
+		url: "pay/user/balance"
+	})
+	return data
+}
+// 我的学习 course/course/study/list
+const study = async () => {
+	let data = await api({
+		url: "course/course/study/list"
+	})
+	return data
+}
+// 登录接口
+const getUser = async () => {
+	let data = await api({
+		url: "auth/login",
+		method: "POST"
+	})
+}
+// 验证码接口
+const getCode = async (id) => {
+	let data = await api({
+		url: 'system/sms/code',
+		method: 'POST',
+		data:id
+	})
+}
+// 阅读详情下的用户接口
+const userlsitread=async (id)=>{
+	let data =await api({
+		url:`question/api/reply/list/${id}`
+	})
+	return data
+}
+const getCourseList=async(id)=>{
+	let data=await api({
+		url:'course/api/course/search',
+		method:'POST'
+	})
+	return data
+}
+// 获取课程数据
+// async function getCourseList(id, current, size,sort,isFree,labelId) {
+// 	const {
+// 		data
+// 	} = await http.post('course/api/course/search', {
+// 		categoryId: id,
+// 		content: null,
+// 		current: current,
+// 		isFree: isFree,
+// 		labelId: labelId,
+// 		size: size,
+// 		sort: sort
+// 	})
+// 	return data
+// }
+// 获取文章数据
+// async function getArticleData(id, current, size,sort,labelId){
+// 	const {data}=await http.post('article/api/article/search',{
+// 		categoryId: id,
+// 		content: null,
+// 		current: current,
+// 		labelId: labelId,
+// 		size: size,
+// 		sort: sort
+// 	})
+// 	return data
+// }
+// const getArticleData=async()=>{
+// 	let data=await api({
+// 		url:'article/api/article/search',
+// 		method:'POST'
+// 	})
+// 	return data
+// }
+// 获取问答数据
+async function getAskData(id, current, size,sort){
+	const {data}=await http.post('question/api/question/search',{
+		categoryId: id,
+		content: null,
+		current: current,
+		labelId: null,
+		size: size,
+		sort: sort
+	})
+	return data
+}
+// const getAskData=async()=>{
+// 	let data=await api({
+// 		url:'question/api/question/search',
+// 		method:'POST'
+// 	})
+// 	return data
+// }
+// balance
+// export const floor = async () => { //楼层   这是一种导出方式
+// 	let data = await api({
+// 		url: 'home/floordata'
+// 	})
+// 	return data
+// }
+export {
+	
+	taocanlsit,
+	swiper,
+	list,
+	asklist,
+	bannerimg,
+	readlist,
+	txttabList,
+	indexList,
+	pinglunlist,
+	txttoLisT,
+	redlist4,
+	serchlistsTile,
+	asklistIndex,
+	order,
+	balance,
+	study,
+	getUser,
+	getCode,
+	userlsitread
+}
