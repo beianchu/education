@@ -1,0 +1,69 @@
+<!--pages/wodeke/wodeke.wxml-->
+<view>
+<view class="dateBox">
+2022年9月</view>
+</view>
+<view>
+<!-- 以上是日期标题 -->
+<view>
+  <view>
+</view>
+</view>
+</view>
+<!-- 日期时间box -->
+
+<view class="boxgigdate">
+<view class="son" wx:for="{{arr}}">
+<view>
+{{item.name}}
+</view>
+<view>
+{{item.date}}
+</view>
+</view>
+</view>
+<!-- 以上是时间 -->
+<view class="boxbigbox">
+<view class="txtke">
+今日课程（<text style="color: orange;">0</text>节课）
+</view>
+<view>
+  <van-icon name="todo-list-o" size="20" />
+  <view style="font-size: 25rpx;">
+  课表</view>
+</view>
+</view>
+<!--  -->
+<view class="tabr-stustdy">
+<view class="childbox">
+<image style="width: 78rpx;height: 78rpx;" src="https://wap.lexuemiao.com/img/history-full@3x.fd48535a.png"></image>
+<view>学习记录</view>
+</view>
+<view class="childbox">
+<image style="width: 78rpx;height: 78rpx;" src="https://wap.lexuemiao.com/img/ziliao@3x.6d7c3da4.png"></image>
+<view>
+学习资料
+</view>
+</view>
+</view>
+<!--  -->
+<view class="boxtitle-box">
+<view class="txt-cekhh">
+正在学习的课程
+</view>
+<view class="box--kdkdkd">查看更多</view>
+</view>
+<!--  -->
+<view class="card-bxo"   wx:for="{{4}}">
+<text class="titlebx">考研英语</text>
+<view class="cardlist" style="margin: 10rpx 15rpx;">
+<view style="font-size: 35rpx;">23正英语|考研正英80+特训</view>
+<view style="margin: 15rpx 0;"><text class="boxgrag">系统课</text> <text  class="boxgrag">2课时费</text></view>
+<view style="display: flex;align-items: center;font-size: 25rpx;">
+
+<image style="width: 70rpx;height: 70rpx;border-radius: 50%;margin-right: 10rpx;" src="https://lexuemiao.oss-cn-beijing.aliyuncs.com/uploads/image/2020af1zvps41607912321.jpg"></image>   <text>陈正康</text>  
+<image style="width: 70rpx;height: 70rpx;border-radius: 50%;margin-right: 10rpx;" src="https://lexuemiao.oss-cn-beijing.aliyuncs.com/uploads/image/2020576ztzcv1579054635.jpg"></image>  <text>  陈正康</text>  
+</view>
+</view>
+</view>
+<!--  -->

@@ -1,0 +1,33 @@
+/* components/banner-zhibo/banner-zhibo.wxss */
+.boximgbanner{
+  width: 100%;
+  padding: 30rpx 0;
+}
+.box-img{
+  box-shadow: 0px 0px 20px 20px rgba(187, 184, 184, 0.3) ;
+  box-sizing: border-box;
+  padding: 0 10rpx;
+  width: 90%;
+  height: 100rpx;
+  /* background-color: red; */
+  margin: 0 auto;
+  border-radius: 50rpx;
+}
+
+.txtbann{
+  height: 100%;
+  line-height: 100rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 35rpx;
+
+}
+.txtbann::before{
+  margin: 0 10rpx;
+  content: '';
+  height: 50rpx;
+  width: 100rpx;
+  background-color: white;
+  border: 1rpx solid gray;
+}

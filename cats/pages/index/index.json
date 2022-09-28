@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+  "banner-nav":"../../components/banner-img/bannerlist",
+  "banner-zhibo":"../../components/banner-zhibo/banner-zhibo"
+  }
+}

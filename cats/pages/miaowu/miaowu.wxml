@@ -1,0 +1,20 @@
+<!--index.wxml-->
+<view class="boxContent">
+<view class="topbox">
+  <view class="titlebox">喵Wv~</view>
+  <view>
+    <van-icon name="comment-o" class="tabbox" />
+    <van-icon name="friends-o" class="tabbox"  />  
+  </view>
+  <view>
+  
+
+  </view>
+</view>
+<van-tabs active="{{ active }}" bind:change="onChange"  title-active-color="#f15a24" 	>
+  <van-tab title="广场">内容</van-tab>
+  <van-tab title="图书刊物">内容 2</van-tab>
+  <van-tab title="关注">内容 3</van-tab>
+  
+</van-tabs>
+</view>

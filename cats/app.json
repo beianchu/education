@@ -1,0 +1,54 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/wodeke/wodeke",
+    "pages/miaowu/miaowu",
+    "pages/gongju/gongju",
+    "pages/wode/wode",
+    "components/hahha/hahah",
+    "components/ok/ok",
+    "components/banner-zhibo/banner-zhibo"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "选课"
+      },
+      {
+        "pagePath": "pages/wodeke/wodeke",
+        "text": "我的课"
+      },
+      {
+        "pagePath": "pages/miaowu/miaowu",
+        "text": "喵屋"
+      },
+      {
+        "pagePath": "pages/gongju/gongju",
+        "text": "工具"
+      },
+      {
+        "pagePath": "pages/wode/wode",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "component": true,
+  "usingComponents": {
+    "van-button": "./miniprogram_npm/@vant/weapp/button/index",
+    "van-tab": "./miniprogram_npm/@vant/weapp/tab/index",
+    "van-tabs": "./miniprogram_npm/@vant/weapp/tabs/index",
+    "van-icon": "./miniprogram_npm/@vant/weapp/icon/index",
+    "van-calendar": "./miniprogram_npm/@vant/weapp/calendar/index",
+    "van-collapse": "./miniprogram_npm/@vant/weapp/collapse/index",
+    "van-collapse-item": "./miniprogram_npm/@vant/weapp/collapse-item/index"
+  },
+  "debug": true
+}
