@@ -1,25 +1,28 @@
 <view class="topbox">
-  <view class="boxtitle">管理类联考></view>
+  <view class="boxtitle" bindtap="tabShow" >管理类联考></view>
   <view>
     <van-icon name="search" class="icon-txt" />
     <van-icon name="manager-o" class="icon-txt" />
   </view>
 </view>
-<van-tabs active="{{ active }}"   title-active-color="#f15a24">
-  <van-tab title="{{item.title}}" wx:for="{{arrTile}}" bind:click="Change"  wx:key="{{item.id}}" data-item="{{item}}">
+
+
+<van-tabs  active="{{ active }}"    title-active-color="#f15a24" 	animated="true">
+  <van-tab title="精选" >
+    精选内容
+</van-tab>
+  <van-tab   title="{{item.title}}" wx:for="{{arrTile}}" bind:click="Change"  wx:key="{{item.id}}" data-item="{{item}}">
+  <banner-zhibo></banner-zhibo>
     <banner-nav></banner-nav>
+    <!-- 考研 -->
+    <kaoyan></kaoyan>
+<!-- 老师讲师介绍卡片 -->
+<tearher></tearher>
   </van-tab>
-
 </van-tabs>
-<!--轮播图-- -->
-<!-- 直播box -->
-<banner-zhibo></banner-zhibo>
-<!-- -->
-<view>
-<image src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGwA…XxQRQCdTLO4QOZvgiJs3z/+rV3Gr1AkC9AAAAAElFTkSuQmCC"></image>
-距离考研还有86天
-</view>
-
+<van-action-sheet   bind:close="onClose" show="{{ show }}" title="标题">
+  <view class=contentbox"></view>
+</van-action-sheet>
 
 
 

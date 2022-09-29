@@ -1,6 +1,8 @@
 {
   "usingComponents": {
   "banner-nav":"../../components/banner-img/bannerlist",
-  "banner-zhibo":"../../components/banner-zhibo/banner-zhibo"
+  "banner-zhibo":"../../components/banner-zhibo/banner-zhibo",
+  "kaoyan":"../../components/wenzitxt/juli",
+  "tearher":"../../components/cardSon/tearcher"
   }
 }

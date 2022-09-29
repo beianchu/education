@@ -1,3 +1,4 @@
 {
-  "usingComponents": {}
+  "usingComponents": {},
+  "banner-zhibo":"../../components/banner-zhibo/banner-zhibo"
 }

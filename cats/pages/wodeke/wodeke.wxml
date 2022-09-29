@@ -1,6 +1,7 @@
 <!--pages/wodeke/wodeke.wxml-->
 <view>
 <view class="dateBox">
+<banner-zhibo></banner-zhibo>
 2022年9月</view>
 </view>
 <view>
@@ -33,7 +34,7 @@
   课表</view>
 </view>
 </view>
-<!--  -->
+
 <view class="tabr-stustdy">
 <view class="childbox">
 <image style="width: 78rpx;height: 78rpx;" src="https://wap.lexuemiao.com/img/history-full@3x.fd48535a.png"></image>
@@ -46,14 +47,14 @@
 </view>
 </view>
 </view>
-<!--  -->
+
 <view class="boxtitle-box">
 <view class="txt-cekhh">
 正在学习的课程
 </view>
 <view class="box--kdkdkd">查看更多</view>
 </view>
-<!--  -->
+
 <view class="card-bxo"   wx:for="{{4}}">
 <text class="titlebx">考研英语</text>
 <view class="cardlist" style="margin: 10rpx 15rpx;">
@@ -66,4 +67,3 @@
 </view>
 </view>
 </view>
-<!--  -->

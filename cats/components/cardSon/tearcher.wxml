@@ -1,0 +1,21 @@
+<!--components/cardSon/tearcher.wxml-->
+<!-- 老师介绍页面 -->
+<view class="box-big">
+<view class="box-title">
+<view>免费直播课程</view>
+<view>查看全部></view>
+</view>
+<view class="boxtearch1">
+<!-- tearchCard -->
+<view class="boxtearch" wx:for="{{3}}">
+<image class="img-header" style="width: 80rpx; height: 80rpx;border-radius: 50%;" src="https://lexuemiao.oss-cn-beijing.aliyuncs.com/uploads/image/20224wnkersk1659940001.png"></image>
+<view class="title-top">23管综考前40天</view>
+<view>面授集训说明会</view>
+<view>（回放）</view>
+<view class="freebox">免费</view>
+<view style="color: orange;">3610人已经报名</view>
+</view>
+<view>
+</view>
+</view>
+</view>

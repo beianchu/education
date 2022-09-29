@@ -1,0 +1,15 @@
+/* components/wenzitxt/juli.wxss */
+.box-big{
+  text-align: center;
+  width: 100%;
+  height: 200rpx;
+  /* background-color: black; */
+}
+.boxkaoyan{
+  box-sizing: border-box;
+  padding: 10rpx;
+  margin: 0 auto;
+  color: gray;
+  font-size: 32rpx;
+
+}
