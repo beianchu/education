@@ -10,7 +10,10 @@
     "components/banner-zhibo/banner-zhibo",
     "components/wenzitxt/juli",
     "components/cardSon/tearcher",
-    "components/dongtai/dongtaiList"
+    "components/dongtai/dongtaiList",
+    "pages/logins/logins",
+    "pages/huatiDetails/huatiDetails",
+    "pages/squire/squire"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -22,23 +25,33 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "选课"
+        "text": "选课",
+        "selectedIconPath": "static/image/课程 (1).png",
+        "iconPath": "static/image/课程.png"
       },
       {
         "pagePath": "pages/wodeke/wodeke",
-        "text": "我的课"
+        "text": "我的课",
+        "selectedIconPath": "static/image/24_课程 (1).png",
+        "iconPath": "static/image/24_课程.png"
       },
       {
         "pagePath": "pages/miaowu/miaowu",
-        "text": "喵屋"
+        "text": "喵屋",
+        "iconPath": "static/image/猫咪.png",
+        "selectedIconPath": "static/image/猫咪 (1).png"
       },
       {
         "pagePath": "pages/gongju/gongju",
-        "text": "工具"
+        "text": "工具",
+        "iconPath": "static/image/系统工具.png",
+        "selectedIconPath": "static/image/系统工具 (1).png"
       },
       {
         "pagePath": "pages/wode/wode",
-        "text": "我的"
+        "text": "我的",
+        "iconPath": "static/image/我的.png",
+        "selectedIconPath": "static/image/我的 (1).png"
       }
     ]
   },

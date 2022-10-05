@@ -1,26 +1,27 @@
 <template>
 	<view class="content">
-		<view class="btn-box"><button class="box-search">搜索</button></view>
+	
 		<!--以上是搜索框点击跳转到搜索页面 -->
-		<view class="wrap" style="height: auto;"><u-swiper :list="list" name="item.image_src"></u-swiper></view>
+		<view class="wrap"><u-swiper :list="data.list" name="image_src" style="height: 300rpx;"></u-swiper></view>
 		<!-- 以上是轮播图片 -->
 		<!-- 分类导航栏 -->
 		<view class="cate">
-		<u-grid :col="4">
-				<u-grid-item v-for="item,index in data.navList" :key="index">
-					<image :src="item.image_src" mode="" style="width: 120rpx;height: 120rpx;"></image>
-					
+			<u-grid :col="4" :custom-style="{padding:'0'}" :broder="false">
+				<u-grid-item v-for="(item, index) in data.navList" :key="index">
+					<view style="width: 100%;height: 100%;"><image :src="item.image_src" mode="widthFix" style="width: 100%;height: 100%;"></image></view>
 				</u-grid-item>
-				
 			</u-grid>
 		</view>
+		<!-- 楼层结构样式 -->
+
+		<foolr></foolr>
 	</view>
 </template>
 
 <script lang="ts" setup>
-
-	import {getSwiperData,getNavData} from "@/api/api.ts"
-import { reactive } from "vue";
+import foolr from '../../component/foolr.vue';
+import { getSwiperData, getNavData, getFolr } from '@/api/api.ts';
+import { reactive } from 'vue';
 // import { log } from "util";
 // const list = [
 // 	{
@@ -36,48 +37,72 @@ import { reactive } from "vue";
 // 		title: '谁念西风独自凉，萧萧黄叶闭疏窗，沉思往事立残阳'
 // 	}
 // ];
-const data=reactive({
-	list:[],
-	navList:[]
-})
-getSwiperData().then(res=>{
-	
-	data.list=res.message
-	console.log(res,'res');
-})
-getNavData().then(res=>{
-	data.navList=res.message
-	console.log(res,'导航');
-})
+
+const data = reactive({
+	list: [],
+	navList: []
+});
+getSwiperData().then(res => {
+	data.list = res.message;
+	// console.log(res,'res');
+});
+getNavData().then(res => {
+	data.navList = res.message;
+	// console.log(res,'导航');
+});
+// 楼层问题
+getFolr().then(res => {
+	// console.log(res, '楼层');
+});
+//分类数据接口
+// getCatelist().then(res=>{
+// 	console.log(res,'分类');
+// })
 </script>
 
 <style lang="scss">
-	.grid-text {
-			font-size: 28rpx;
-			margin-top: 4rpx;
-			color: $u-type-info;
-		}
-.btn-box {
-	width: 100%;
-	padding: 10rpx;
-	height: 90rpx;
-	background: #d75255;
-	.box-search {
-		height: 70rpx;
-	}
+.wrap {
+	padding: 24rpx;
 }
 
-	.badge-icon {
-		position: absolute;
-		top: 14rpx;
-		right: 40rpx;
-		width: 30rpx;
-		height: 30rpx;
-	}
-	
-	.grid-text {
-		font-size: 28rpx;
-		margin-top: 4rpx;
-		color: $u-type-info;
-	}
+.u-row {
+	margin: 40rpx 0;
+}
+
+.demo-layout {
+	height: 80rpx;
+	border-radius: 8rpx;
+}
+
+.bg-purple {
+	background: #d3dce6;
+}
+
+.bg-purple-light {
+	background: #e5e9f2;
+}
+
+.bg-purple-dark {
+	background: #99a9bf;
+}
+.grid-text {
+	font-size: 28rpx;
+	margin-top: 4rpx;
+	color: $u-type-info;
+}
+
+
+.badge-icon {
+	position: absolute;
+	top: 14rpx;
+	right: 40rpx;
+	width: 30rpx;
+	height: 30rpx;
+}
+
+.grid-text {
+	font-size: 28rpx;
+	margin-top: 4rpx;
+	color: $u-type-info;
+}
 </style>

@@ -23,19 +23,29 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
+.wrap {
+  padding: 24rpx;
+}
+.u-row {
+  margin: 40rpx 0;
+}
+.demo-layout {
+  height: 80rpx;
+  border-radius: 8rpx;
+}
+.bg-purple {
+  background: #d3dce6;
+}
+.bg-purple-light {
+  background: #e5e9f2;
+}
+.bg-purple-dark {
+  background: #99a9bf;
+}
 .grid-text {
   font-size: 28rpx;
   margin-top: 4rpx;
   color: #909399;
-}
-.btn-box {
-  width: 100%;
-  padding: 10rpx;
-  height: 90rpx;
-  background: #d75255;
-}
-.btn-box .box-search {
-  height: 70rpx;
 }
 .badge-icon {
   position: absolute;

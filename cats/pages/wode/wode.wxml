@@ -1,7 +1,11 @@
 <!--pages/wode/wode.wxml-->
 <view class="boximg">
   <van-icon name="setting-o" style="position:absolute; top: 50rpx; right: 50rpx;" size="28" />
-<view class="boxheader">
+<view class="boxheader" wx:if="{{flag==1}}">
+<image style="width: 100rpx;height: 100rpx;border-radius: 50%;" src="	https://lexuemiao.oss-cn-beijing.aliuncs.com/uploads/image/20191y4shelp1563346099.jpg" alt=""/>
+<view bindtap="Tologins">未登录！！！</view>
+</view>
+<view class="boxheader"  wx:if="{{flag==2}}">
 <image style="width: 100rpx;height: 100rpx;border-radius: 50%;" src="	https://lexuemiao.oss-cn-beijing.aliyuncs.com/uploads/image/20191y4shelp1563346099.jpg" alt=""/>
 <view>一世浮沉</view>
 </view>

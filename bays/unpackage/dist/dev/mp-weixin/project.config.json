@@ -18,7 +18,7 @@
     }
   },
   "compileType": "miniprogram",
-  "libVersion": "2.26.2",
+  "libVersion": "2.26.1",
   "appid": "touristappid",
   "projectname": "bays",
   "condition": {

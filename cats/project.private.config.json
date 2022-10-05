@@ -49,6 +49,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/miaowu/miaowu",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

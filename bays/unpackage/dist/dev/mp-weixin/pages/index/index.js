@@ -12,8 +12,9 @@ const _easycom_u_swiper = () => "../../uni_modules/vk-uview-ui/components/u-swip
 const _easycom_u_grid_item = () => "../../uni_modules/vk-uview-ui/components/u-grid-item/u-grid-item.js";
 const _easycom_u_grid = () => "../../uni_modules/vk-uview-ui/components/u-grid/u-grid.js";
 if (!Math) {
-  (_easycom_u_swiper + _easycom_u_grid_item + _easycom_u_grid)();
+  (_easycom_u_swiper + _easycom_u_grid_item + _easycom_u_grid + foolr)();
 }
+const foolr = () => "../../component/foolr.js";
 const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
   __name: "index",
   setup(__props) {
@@ -23,17 +24,17 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
     });
     api_api.getSwiperData().then((res) => {
       data.list = res.message;
-      console.log(res, "res");
     });
     api_api.getNavData().then((res) => {
       data.navList = res.message;
-      console.log(res, "\u5BFC\u822A");
+    });
+    api_api.getFolr().then((res) => {
     });
     return (_ctx, _cache) => {
       return {
         a: common_vendor.p({
-          list: _ctx.list,
-          name: "item.image_src"
+          list: data.list,
+          name: "image_src"
         }),
         b: common_vendor.f(data.navList, (item, index, i0) => {
           return {
@@ -43,7 +44,11 @@ const _sfc_main = /* @__PURE__ */ common_vendor.defineComponent({
           };
         }),
         c: common_vendor.p({
-          col: 4
+          col: 4,
+          ["custom-style"]: {
+            padding: "0"
+          },
+          broder: false
         })
       };
     };

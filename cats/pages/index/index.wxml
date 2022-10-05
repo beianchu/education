@@ -1,5 +1,6 @@
 <view class="topbox">
   <view class="boxtitle" bindtap="tabShow" >管理类联考></view>
+  
   <view>
     <van-icon name="search" class="icon-txt" />
     <van-icon name="manager-o" class="icon-txt" />

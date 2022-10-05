@@ -3,7 +3,11 @@
     "pages/index/index",
     "pages/cate/cate",
     "pages/car/car",
-    "pages/mine/mine"
+    "pages/mine/mine",
+    "component/searchbtn/searchbtn",
+    "pages/searchPage/searchPage",
+    "pages/shopIndex/shopIndex",
+    "pages/carsList/carsList"
   ],
   "window": {
     "navigationBarTextStyle": "white",
