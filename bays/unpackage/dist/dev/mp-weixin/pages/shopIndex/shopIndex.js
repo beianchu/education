@@ -56,8 +56,8 @@ const _sfc_main = {
       ]
     });
     const onClick = (e) => {
-      common_vendor.index.navigateTo({
-        url: "/pages/carsList/carsList"
+      common_vendor.index.switchTab({
+        url: "/pages/car/car"
       });
       console.log(1);
     };
@@ -85,7 +85,8 @@ const _sfc_main = {
         price: data.obj.goods_price,
         num: 1,
         id: data.obj.cat_one_id,
-        flag: false
+        flag: false,
+        img: data.obj.pics[0].pics_sma_url
       };
       getLoctionLsit();
       const itemList = data.loctionList.find((item) => item.id == data.obj.cat_one_id);

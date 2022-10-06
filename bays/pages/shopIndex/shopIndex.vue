@@ -52,8 +52,8 @@ export default {
 		});
 		// 点击跳转到购物车页面
 		const onClick = e => {
-			uni.navigateTo({
-				url: '/pages/carsList/carsList'
+			uni.switchTab({
+				url: '/pages/car/car'
 			});
 			console.log(1);
 		};
@@ -62,7 +62,7 @@ export default {
 			uni.getStorage({
 				key: 'catsList',
 				success: function(res) {
-					data.loctionList = res.data
+					data.loctionList = res.data;
 					console.log(res.data, '获取本地数据·');
 				}
 			});
@@ -79,12 +79,14 @@ export default {
 		};
 		// 点击加入购物车添加数据
 		const buttonClick = e => {
+			
 			let list = {
 				name: data.obj.goods_name,
 				price: data.obj.goods_price,
 				num: 1,
 				id: data.obj.cat_one_id,
-				flag:false
+				flag: false,
+				img:data.obj.pics[0].pics_sma_url
 			};
 			// 获取本地数据·
 			getLoctionLsit();
@@ -98,8 +100,6 @@ export default {
 				data.loctionList.push(list);
 				getBenList();
 			}
-
-			
 		};
 		return { getBenList, getLoctionLsit, onClick, buttonClick, ...toRefs(data) };
 	},

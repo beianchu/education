@@ -62,6 +62,13 @@
           "query": "id=56125",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/car/car",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }
