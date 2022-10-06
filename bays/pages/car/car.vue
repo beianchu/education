@@ -12,7 +12,7 @@
 			<image :src="item.img.goods_small_logo" mode="widthFix" class="boximg"></image>
 			<view class="boxtitle">
 				<view class="boxlist">{{ item.name }}</view>
-				<view class="boxlist">天泰坦基督教的角度讲简单简单</view>
+				
 				<view class="box-title">
 					<view class="price-box" style="font-size: 24rpx; font-weight: 600;color: red;">￥{{ item.price }}</view>
 					<u-number-box v-model="item.num" @change="valChange(index)"></u-number-box>
@@ -68,12 +68,12 @@ export default {
 			// console.log(data.list);
 			item.flag = !item.flag;
 			//
-			setTimeout(() => {
+			// setTimeout(() => {
 				data.allOK = data.list.every(item => item.flag == true);
-			}, 0);
+			// }, 0);
 		};
 		// 点击全选 全部不选
-		const checkboxChange = e => {
+		const checkboxChandsge = e => {
 			data.allOK = e.value;
 			data.list.forEach(item => {
 				item.flag = data.allOK;
@@ -141,6 +141,7 @@ export default {
 	padding: 20rpx;
 	display: flex;
 	align-items: center;
+	border-bottom: 1rpx solid gray	;
 	.boximg {
 		width: 150rpx;
 		height: 150rpx;

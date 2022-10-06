@@ -43,15 +43,7 @@ const _sfc_main = {
     });
     const check = (item) => {
       item.flag = !item.flag;
-      setTimeout(() => {
-        data.allOK = data.list.every((item2) => item2.flag == true);
-      }, 0);
-    };
-    const checkboxChange = (e) => {
-      data.allOK = e.value;
-      data.list.forEach((item) => {
-        item.flag = data.allOK;
-      });
+      data.allOK = data.list.every((item2) => item2.flag == true);
     };
     const valChange = (index) => {
       if (data.list[index].num == 0) {

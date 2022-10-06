@@ -1,5 +1,6 @@
 <template>
 	<view>
+		<!-- 我的页面 -->
 		我的
 	</view>
 </template>

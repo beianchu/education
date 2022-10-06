@@ -50,6 +50,7 @@
   padding: 20rpx;
   display: flex;
   align-items: center;
+  border-bottom: 1rpx solid gray;
 }
 .boxCats .boximg {
   width: 150rpx;
